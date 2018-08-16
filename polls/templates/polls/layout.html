@@ -1,0 +1,28 @@
+<!--사이트의 공통요소를 정의합니다.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask APP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <header>
+        <div class = "container">
+            <h1 class = "logo">Flask APP</h1>
+            <strong> 
+                <nav><!--nav엘리먼트는 반드시 header코드안에 넣어주세요-->
+                    <ul class="menu">
+                        <li><a href="{{ url_for('home') }}">HOME</a></li><!--home와 about함수에 nav링크를 걸어줍니다-->
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('location') }}">나의 위치</a></li>
+                    </ul>
+                </nav>
+            </strong>
+        </div>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
